@@ -10,17 +10,19 @@ Tool part ที่เลือก: Part 3 Robot Framework และ Part 4 Cypr
 - Step 0.4 locator ของ Must be vegetarian: `#default-checkbox` (เจอ 1 element)
 - Step 0.4 locator ของ Custom Pizza Name: `input#pizza-name` (เจอ 1 element ส่วน `#pizza-name` อย่างเดียวจะเจอ 2 ตัวหลังกด Pizza, Please!)
 - Step 0.4 `$$("#floating_filled").length` ได้ 3 ส่วน `//label[normalize-space()='Max Calories per Slice']/preceding-sibling::input` เจอ 1 ตัว
-- Step 0.5 ชื่อพิซซ่า tool และแคลอรี่จากการรันด้วยมือ: Lab Pizza 20261115-1357, tool Scissors, 475 แคลอรี่ต่อชิ้น (dough Thick, ส่วนผสม 7 อย่าง ไม่มีเนื้อสัตว์) รันด้วยมือใน Opera
+- Step 0.5 ชื่อพิซซ่า tool และแคลอรี่จากการรันด้วยมือใน Chrome: Lab Pizza 20261115-1408, tool Scissors, 425 แคลอรี่ต่อชิ้น (dough Thin, ส่วนผสม 5 อย่าง ไม่มีเนื้อสัตว์)
 
 | Step | ผลที่ได้จริง | ผ่านหรือไม่ผ่าน |
 |------|-------------|----------------|
 | 1 | หัวข้อแสดง "Looking to break out of your pizza routine?" มุมขวาบนเป็น Login (ยังไม่ได้ล็อกอิน) | ผ่าน |
 | 2 | เปิด Advanced แล้วมีช่อง Max Calories per Slice (ค่าเริ่มต้น 1000), Excluded tools, Must be vegetarian และ Custom Pizza Name ขึ้นมา | ผ่าน |
-| 3 | ช่องแสดง 600, เลือก Knife, ติ๊ก Must be vegetarian และชื่อ Lab Pizza 20261115-1357 | ผ่าน |
-| 4 | คำตอบแสดง Name: Lab Pizza 20261115-1357, Tool: Scissors (ไม่ใช่ Knife), Calories per slice: 475 (ไม่เกิน 600) | ผ่าน |
+| 3 | ช่องแสดง 600, เลือก Knife, ติ๊ก Must be vegetarian และชื่อ Lab Pizza 20261115-1408 | ผ่าน |
+| 4 | คำตอบแสดง Name: Lab Pizza 20261115-1408, Tool: Scissors (ไม่ใช่ Knife), Calories per slice: 425 (ไม่เกิน 600) | ผ่าน |
 | 5 | กด Love it! โดยยังไม่ได้ล็อกอิน หน้าแสดง "Please log in first." | ผ่าน |
 | 6 | ล็อกอินด้วย admin/admin แล้วหน้าแสดง "Latest pizza recommendations" | ผ่าน |
-| 7 | เจอบรรทัด `Lab Pizza 20261115-1357 (tool=Scissors, ingredients_number=7)` เป็นอันดับที่ 7 ของรายการ เพราะมีพิซซ่าของคนอื่นเข้ามาก่อน tool ตรงกับ step 4 | ผ่าน |
+| 7 | เจอบรรทัด `Lab Pizza 20261115-1408 (tool=Scissors, ingredients_number=5)` เป็นอันดับที่ 4 ของรายการ เพราะมีพิซซ่าของคนอื่นเข้ามาก่อน tool ตรงกับ step 4 | ผ่าน |
+
+หมายเหตุ: รอบก่อนหน้าที่ใช้ชื่อ Lab Pizza 20261115-1403 ผ่าน step 1-6 แต่ตอนเปิดหน้า admin ไม่เจอชื่อนี้ใน 15 บรรทัดล่าสุด น่าจะเพราะมีพิซซ่าของคนอื่นเข้ามาจนดันออกจากรายการ หรือแท็บ admin ไปเจอคนละ server รอบ 1408 จึงเปิดหน้า admin ทันทีหลัง step 5 และเจอพิซซ่าในรายการ เรื่องนี้แสดงว่า step 7 ต้องค้นหาทั้งรายการและต้องทำต่อจาก step 5 ให้เร็ว ซึ่ง test อัตโนมัติทำอยู่แล้ว
 
 ## Part 3: Robot Framework
 - robot --version: Robot Framework 7.5.1 (Python 3.14.0 on win32)
