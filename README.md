@@ -1,16 +1,16 @@
 # ui-lab
 
-Automated UI testing lab for ITDS362. Test case QP-01 (a custom pizza reaches the admin list on QuickPizza) is automated with two tools.
+แลป Automated UI Testing ของวิชา ITDS362 นำ test case QP-01 (พิซซ่าที่สั่งแบบกำหนดเงื่อนไขต้องไปโผล่ในรายการของหน้า admin บน QuickPizza) มาทำเป็น test อัตโนมัติด้วยเครื่องมือ 2 ตัว
 
-Tool parts that I chose: **Part 3, Robot Framework** and **Part 4, Cypress**.
+Tool part ที่เลือก: **Part 3 Robot Framework** และ **Part 4 Cypress**
 
-Results, versions and the reflection are in [RESULTS.md](RESULTS.md).
+ผลการรัน เวอร์ชันของเครื่องมือ และคำตอบ reflection อยู่ใน [RESULTS.md](RESULTS.md)
 
-## robot/ (Part 3, Robot Framework)
+## robot/ (Part 3 Robot Framework)
 
-Robot Framework 7.5.1 with SeleniumLibrary 6.9.0. `first.robot` and `web_form.robot` test Selenium's web form, and `pizza_scenario.robot` runs QP-01 with the keywords in `resources/quickpizza.resource`. `results/run1` and `results/run2` hold the log, report and screenshots of two full runs.
+ใช้ Robot Framework 7.5.1 กับ SeleniumLibrary 6.9.0 ไฟล์ `first.robot` และ `web_form.robot` ทดสอบ web form ของ Selenium ส่วน `pizza_scenario.robot` รัน QP-01 โดยใช้ keyword ใน `resources/quickpizza.resource` โฟลเดอร์ `results/run1` และ `results/run2` เก็บ log, report และ screenshot ของการรันเต็ม 2 รอบ
 
-Needs ChromeDriver in the environment variable `CHROMEDRIVER`. Set up once, then run from the `robot` folder:
+ต้องตั้งตัวแปร `CHROMEDRIVER` ให้ชี้ไปที่ไฟล์ ChromeDriver ก่อน ติดตั้งครั้งแรกแล้วรันจากโฟลเดอร์ `robot`:
 
 ```
 python -m venv .venv
@@ -19,11 +19,11 @@ pip install -r requirements.txt
 robot -d results/run1 -v BROWSER:headlesschrome pizza_scenario.robot
 ```
 
-## cypress/ (Part 4, Cypress)
+## cypress/ (Part 4 Cypress)
 
-Cypress 16.2.1. `cypress/e2e/web-form.cy.js` tests Selenium's web form, and `cypress/e2e/pizza-scenario.cy.js` runs QP-01 with the custom command `adminLogin` from `cypress/support/commands.js`. `cypress/videos` and `cypress/screenshots` hold the evidence of the last full run.
+ใช้ Cypress 16.2.1 ไฟล์ `cypress/e2e/web-form.cy.js` ทดสอบ web form ของ Selenium ส่วน `cypress/e2e/pizza-scenario.cy.js` รัน QP-01 โดยใช้คำสั่ง `adminLogin` ที่เขียนเองใน `cypress/support/commands.js` โฟลเดอร์ `cypress/videos` และ `cypress/screenshots` เก็บหลักฐานของการรันเต็มรอบล่าสุด
 
-Run from the `cypress` folder:
+รันจากโฟลเดอร์ `cypress`:
 
 ```
 npm install
