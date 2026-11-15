@@ -10,17 +10,17 @@ Tool part ที่เลือก: Part 3 Robot Framework และ Part 4 Cypr
 - Step 0.4 locator ของ Must be vegetarian: `#default-checkbox` (เจอ 1 element)
 - Step 0.4 locator ของ Custom Pizza Name: `input#pizza-name` (เจอ 1 element ส่วน `#pizza-name` อย่างเดียวจะเจอ 2 ตัวหลังกด Pizza, Please!)
 - Step 0.4 `$$("#floating_filled").length` ได้ 3 ส่วน `//label[normalize-space()='Max Calories per Slice']/preceding-sibling::input` เจอ 1 ตัว
-- Step 0.5 ชื่อพิซซ่า tool และแคลอรี่จากการรันด้วยมือ: TODO
+- Step 0.5 ชื่อพิซซ่า tool และแคลอรี่จากการรันด้วยมือ: Lab Pizza 20261115-1357, tool Scissors, 475 แคลอรี่ต่อชิ้น (dough Thick, ส่วนผสม 7 อย่าง ไม่มีเนื้อสัตว์) รันด้วยมือใน Opera
 
 | Step | ผลที่ได้จริง | ผ่านหรือไม่ผ่าน |
 |------|-------------|----------------|
-| 1 | TODO | |
-| 2 | TODO | |
-| 3 | TODO | |
-| 4 | TODO | |
+| 1 | หัวข้อแสดง "Looking to break out of your pizza routine?" มุมขวาบนเป็น Login (ยังไม่ได้ล็อกอิน) | ผ่าน |
+| 2 | เปิด Advanced แล้วมีช่อง Max Calories per Slice (ค่าเริ่มต้น 1000), Excluded tools, Must be vegetarian และ Custom Pizza Name ขึ้นมา | ผ่าน |
+| 3 | ช่องแสดง 600, เลือก Knife, ติ๊ก Must be vegetarian และชื่อ Lab Pizza 20261115-1357 | ผ่าน |
+| 4 | คำตอบแสดง Name: Lab Pizza 20261115-1357, Tool: Scissors (ไม่ใช่ Knife), Calories per slice: 475 (ไม่เกิน 600) | ผ่าน |
 | 5 | TODO | |
-| 6 | TODO | |
-| 7 | TODO | |
+| 6 | ล็อกอินด้วย admin/admin แล้วหน้าแสดง "Latest pizza recommendations" | ผ่าน |
+| 7 | เจอบรรทัด `Lab Pizza 20261115-1357 (tool=Scissors, ingredients_number=7)` เป็นอันดับที่ 7 ของรายการ เพราะมีพิซซ่าของคนอื่นเข้ามาก่อน tool ตรงกับ step 4 | ผ่าน |
 
 ## Part 3: Robot Framework
 - robot --version: Robot Framework 7.5.1 (Python 3.14.0 on win32)
