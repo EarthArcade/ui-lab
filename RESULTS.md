@@ -37,7 +37,7 @@ Tool part ที่เลือก: Part 3 Robot Framework และ Part 4 Cypr
 - Step 4.7 บรรทัดในรายการหน้า admin ที่แสดงพิซซ่าของเรา: `Lab Pizza 20261115-134746 (tool=Scissors, ingredients_number=5) (newest)`
 - Step 4.8 รอบที่ 1 ผล เวลา และชื่อพิซซ่า: All specs passed, 00:16 (pizza-scenario 00:12, web-form 00:04), Lab Pizza 20261115-134703 (Scissors, 375)
 - Step 4.8 รอบที่ 2 ผล เวลา และชื่อพิซซ่า: All specs passed, 00:16 (pizza-scenario 00:12, web-form 00:03), Lab Pizza 20261115-134746 (Scissors, 350)
-- Step 4.9 (optional) browser และผล: ไม่ได้ทำ
+- Step 4.9 (optional) browser และผล: Microsoft Edge 157 (headless) ด้วย `npx cypress run --browser edge` ผ่านทั้งสอง spec โดยไม่ต้องแก้โค้ด All specs passed! 00:19 (pizza-scenario 00:12, web-form 00:06) พิซซ่า Lab Pizza 20261115-141739 (tool=Pizza cutter, ingredients_number=5) ขึ้นเป็น (newest) ในหน้า admin วิดีโอและ screenshot ของรอบ Edge ไม่ได้ commit เพื่อให้โฟลเดอร์หลักฐานเก็บเฉพาะรอบ Chrome
 
 ## Part B
 1. ช่องตัวเลข 3 ช่องในหน้า QuickPizza ใช้ id `floating_filled` ซ้ำกันหมด พอลองพิมพ์ `$$("#floating_filled").length` ใน Console ก็ได้ 3 ถ้าหาด้วย id นี้จะได้ช่องแรกเสมอ ซึ่งบังเอิญเป็นช่อง Max Calories พอดี แต่ถ้าวันหนึ่งมีการสลับลำดับช่อง test ก็จะไปกรอกผิดช่องทันที เราเลยเปลี่ยนไปหาช่องจากข้อความของ label แทน เพราะ label แต่ละอันชี้ได้แค่ช่องเดียว
